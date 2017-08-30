@@ -26,9 +26,10 @@ class BullsEyeTests: XCTestCase {
         gameUnderTest = nil
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testScoreIsComputed() {
+        let guess = gameUnderTest.targetValue + 5
+        _ = gameUnderTest.check(guess: guess)
+        XCTAssertEqual(gameUnderTest.scoreRound, 95, "Score computed from guess is wrong")
     }
     
 }
